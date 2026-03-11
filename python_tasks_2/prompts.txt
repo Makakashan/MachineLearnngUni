@@ -1,0 +1,4 @@
+Prompty użyte do wsparcia zadania 3:
+
+1) "Napisz krótki opis różnic między normalizacją min-max i standaryzacją z-score. Jak zmieniają się min, max, średnia i odchylenie standardowe?"
+2) "Podaj przykład kodu w Pythonie (numpy + matplotlib) do wykresu punktowego sepal length vs sepal width dla 3 klas irysów w trzech wersjach: oryginalne, min-max, z-score."

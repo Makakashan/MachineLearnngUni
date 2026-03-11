@@ -5,12 +5,16 @@ This repository contains my university assignments for the **Machine Lerning** c
 ## Project structure
 
 - `python_tasks_1/` - Python assignment scripts
+- `python_tasks_2/` - Data preprocessing assignment scripts (iris dataset)
 - `python_tasks_1/output/trajectories/` - generated trajectory images
 
 ## Scripts
 
 - `python_tasks_1/trebuchet.py`
 - `python_tasks_1/biorhythms.py`
+- `python_tasks_2/task1_clean_iris.py`
+- `python_tasks_2/task2_pca.py`
+- `python_tasks_2/task3_normalization.py`
 
 ## Editor setup
 

@@ -1,0 +1,18 @@
+{
+  "explained_variance_ratio": [
+    0.926234573380581,
+    0.04895082251967107,
+    0.01789868456478059,
+    0.006915919534967421
+  ],
+  "explained_variance_cumulative": [
+    0.926234573380581,
+    0.9751853959002521,
+    0.9930840804650327,
+    1.0000000000000002
+  ],
+  "n_components_95": 2,
+  "information_loss": 0.024814604099747894,
+  "pca_plot": "/home/makakashan/Documents/My Favourite Ug/AI2026/python_tasks_2/output/pca_scatter.png",
+  "pca_csv": "/home/makakashan/Documents/My Favourite Ug/AI2026/python_tasks_2/output/iris_pca.csv"
+}

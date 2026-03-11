@@ -1,0 +1,50 @@
+{
+  "rows_total": 1500,
+  "struct_fixes": 3,
+  "struct_bad_rows": 0,
+  "numeric_issues": {
+    "empty": 18,
+    "out_of_range": 19,
+    "non_numeric": 7
+  },
+  "missing_total": 44,
+  "missing_by_col": [
+    13,
+    11,
+    15,
+    5
+  ],
+  "stats_with_errors": [
+    {
+      "min": 4.14,
+      "max": 8.4,
+      "mean": 5.95481506388702,
+      "std": 0.8540093834353784
+    },
+    {
+      "min": 1.95,
+      "max": 4.57,
+      "mean": 3.1396440564137005,
+      "std": 0.42648650583274095
+    },
+    {
+      "min": 1.02,
+      "max": 7.23,
+      "mean": 3.837414141414141,
+      "std": 1.7902592537088744
+    },
+    {
+      "min": 0.05,
+      "max": 4.75,
+      "mean": 1.2492107023411372,
+      "std": 0.791077783333253
+    }
+  ],
+  "invalid_species_raw": {
+    "unknown": 2,
+    "": 2,
+    "versicolr": 1,
+    "versi-color": 1
+  },
+  "invalid_species_fixed": 6
+}
