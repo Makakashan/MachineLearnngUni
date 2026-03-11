@@ -18,7 +18,7 @@ sepal = []
 labels = []
 with open(INPUT_CSV, newline="") as f:
     reader = csv.reader(f)
-    header = next(reader)
+    _ = next(reader)
     for row in reader:
         sepal.append([float(row[0]), float(row[1])])
         labels.append(row[4].strip().lower())

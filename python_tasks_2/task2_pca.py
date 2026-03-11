@@ -15,14 +15,12 @@ PCA_PLOT = OUT_DIR / "pca_scatter.png"
 PCA_CSV = OUT_DIR / "iris_pca.csv"
 SUMMARY_JSON = OUT_DIR / "task2_summary.json"
 
-ALLOWED_SPECIES = {"setosa", "versicolor", "virginica"}
-
 # Load data
 X = []
 labels = []
 with open(INPUT_CSV, newline="") as f:
     reader = csv.reader(f)
-    header = next(reader)
+    _ = next(reader)
     for row in reader:
         X.append([float(row[i]) for i in range(4)])
         labels.append(row[4].strip().lower())
