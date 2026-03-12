@@ -2,8 +2,8 @@ import csv
 import json
 from pathlib import Path
 
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT_DIR = Path(__file__).resolve().parent / "output"
@@ -13,7 +13,7 @@ INPUT_CSV = ROOT / "iris_big.csv"
 PLOT_PATH = OUT_DIR / "normalization_sepal_scatter.png"
 SUMMARY_JSON = OUT_DIR / "task3_summary.json"
 
-# Load data
+# Load data (only sepal columns)
 sepal = []
 labels = []
 with open(INPUT_CSV, newline="") as f:
@@ -25,16 +25,16 @@ with open(INPUT_CSV, newline="") as f:
 
 X = np.array(sepal, dtype=float)
 
-# Normalizations
+# Apply two normalization methods
 min_vals = X.min(axis=0)
 max_vals = X.max(axis=0)
 mean_vals = X.mean(axis=0)
 std_vals = X.std(axis=0)
 
-minmax = (X - min_vals) / (max_vals - min_vals)
-zs = (X - mean_vals) / std_vals
+minmax = (X - min_vals) / (max_vals - min_vals)  # Scale to [0, 1]
+zs = (X - mean_vals) / std_vals  # Standardize: mean=0, std=1
 
-# Stats
+# Calculate stats for each method
 stats = {}
 for name, data in [
     ("original", X),
@@ -48,7 +48,7 @@ for name, data in [
         "std": data.std(axis=0).tolist(),
     }
 
-# Plot
+# Plot comparison
 species_order = ["setosa", "versicolor", "virginica"]
 colors = {"setosa": "#1f77b4", "versicolor": "#2ca02c", "virginica": "#d62728"}
 
@@ -64,12 +64,14 @@ for ax, (title, data) in zip(
 ):
     for sp in species_order:
         idxs = [i for i, label in enumerate(labels) if label == sp]
-        ax.scatter(data[idxs, 0], data[idxs, 1], s=10, alpha=0.7, label=sp, c=colors[sp])
+        ax.scatter(
+            data[idxs, 0], data[idxs, 1], s=10, alpha=0.7, label=sp, c=colors[sp]
+        )
     ax.set_title(title)
     ax.set_xlabel("sepal length")
     ax.set_ylabel("sepal width")
 
-# Single legend
+# Single legend for all subplots
 handles, legend_labels = axes[0].get_legend_handles_labels()
 fig.legend(handles, legend_labels, loc="upper center", ncol=3, frameon=False)
 fig.tight_layout(rect=(0, 0, 1, 0.90))

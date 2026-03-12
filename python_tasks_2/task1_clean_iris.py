@@ -18,13 +18,14 @@ ALLOWED_SPECIES = {"setosa", "versicolor", "virginica"}
 
 
 def fix_row_structure(row):
+    """Fix rows where decimal comma split into 2 columns: "4,75" -> ["4", "75"] -> "4.75" """
     if len(row) == 6 and row[0].isdigit() and row[1].isdigit():
-        # Likely a decimal split by comma: "4,75" -> ["4", "75"]
         return [row[0] + "." + row[1]] + row[2:]
     return row
 
 
 def parse_float(value):
+    """Parse string to float, return (number, error_type)"""
     raw = value.strip()
     if raw == "":
         return None, "empty"
@@ -40,6 +41,7 @@ def parse_float(value):
 
 
 def normalize_species(value):
+    """Clean species names: remove separators, prefixes, punctuation"""
     s = value.strip().lower()
     s = s.replace("_", " ").replace("-", " ")
     s = " ".join(s.split())
@@ -57,6 +59,7 @@ struct_bad = 0
 numeric_issues = Counter()
 invalid_species_raw = Counter()
 
+# Read CSV and detect errors
 with open(INPUT_CSV, newline="") as f:
     reader = csv.reader(f)
     header = next(reader)
@@ -91,7 +94,7 @@ with open(INPUT_CSV, newline="") as f:
 
 X = np.array(rows, dtype=float)
 
-# Stats on erroneous data (before filling NaNs)
+# Calculate stats before fixing
 missing_mask = np.isnan(X)
 missing_total = int(missing_mask.sum())
 missing_by_col = missing_mask.sum(axis=0).astype(int).tolist()
@@ -108,14 +111,14 @@ for col in range(X.shape[1]):
         }
     )
 
-# Fill invalid numeric values with column medians
+# Fix numeric: fill NaN with column median
 col_median = np.nanmedian(X, axis=0)
 X_filled = X.copy()
 for j in range(X_filled.shape[1]):
     nan_mask = np.isnan(X_filled[:, j])
     X_filled[nan_mask, j] = col_median[j]
 
-# Fill invalid species using nearest centroid
+# Fix species: assign to nearest centroid
 species: List[str | None] = list(raw_species)
 valid_indices = [i for i, s in enumerate(species) if s in ALLOWED_SPECIES]
 centroids: Dict[str, np.ndarray] = {}
@@ -127,8 +130,9 @@ fixed_species_count = 0
 for i, sp in enumerate(species):
     if sp in ALLOWED_SPECIES:
         continue
-    # Assign to nearest centroid
-    distances = {k: float(np.linalg.norm(X_filled[i] - v)) for k, v in centroids.items()}
+    distances = {
+        k: float(np.linalg.norm(X_filled[i] - v)) for k, v in centroids.items()
+    }
     best = min(distances, key=lambda k: distances[k])
     species[i] = best
     fixed_species_count += 1

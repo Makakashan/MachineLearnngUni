@@ -3,8 +3,8 @@ import json
 from pathlib import Path
 from typing import cast
 
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT_DIR = Path(__file__).resolve().parent / "output"
@@ -27,30 +27,31 @@ with open(INPUT_CSV, newline="") as f:
 
 X = np.array(X, dtype=float)
 
-# PCA via covariance matrix
+# PCA: center data, compute covariance, find eigenvectors
 X_mean = X.mean(axis=0)
 X_centered = X - X_mean
 cov = np.cov(X_centered, rowvar=False)
 
 eigvals, eigvecs = np.linalg.eigh(cov)
-idx = np.argsort(eigvals)[::-1]
+idx = np.argsort(eigvals)[::-1]  # Sort by importance
 
 eigvals = eigvals[idx]
-
 eigvecs = eigvecs[:, idx]
 
+# Calculate how much variance each component explains
 explained_ratio = eigvals / eigvals.sum()
 explained_cum = explained_ratio.cumsum()
 
+# Find components needed for 95% variance
 n_components = int(np.searchsorted(explained_cum, 0.95) + 1)
-X_pca = X_centered @ eigvecs[:, :n_components]
+X_pca = X_centered @ eigvecs[:, :n_components]  # Transform data
 
 info_loss = float(1.0 - explained_cum[n_components - 1])
 
 # Save PCA-transformed data
 with open(PCA_CSV, "w", newline="") as f:
     writer = csv.writer(f)
-    writer.writerow([f"pc{i+1}" for i in range(n_components)] + ["species"])
+    writer.writerow([f"pc{i + 1}" for i in range(n_components)] + ["species"])
     for i in range(len(labels)):
         writer.writerow([f"{x:.6f}" for x in X_pca[i]] + [labels[i]])
 
@@ -62,7 +63,9 @@ plt.figure(figsize=(8, 6))
 if n_components == 2:
     for sp in species_order:
         idxs = [i for i, s in enumerate(labels) if s == sp]
-        plt.scatter(X_pca[idxs, 0], X_pca[idxs, 1], s=12, alpha=0.7, label=sp, c=colors[sp])
+        plt.scatter(
+            X_pca[idxs, 0], X_pca[idxs, 1], s=12, alpha=0.7, label=sp, c=colors[sp]
+        )
     plt.xlabel("PC1")
     plt.ylabel("PC2")
 else:
