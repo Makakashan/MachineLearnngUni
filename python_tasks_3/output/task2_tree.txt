@@ -1,0 +1,88 @@
+|--- petal width (cm) <= 0.79
+|   |--- class: setosa
+|--- petal width (cm) >  0.79
+|   |--- petal width (cm) <= 1.66
+|   |   |--- petal length (cm) <= 5.39
+|   |   |   |--- petal length (cm) <= 5.17
+|   |   |   |   |--- sepal length (cm) <= 4.83
+|   |   |   |   |   |--- sepal width (cm) <= 2.64
+|   |   |   |   |   |   |--- class: versicolor
+|   |   |   |   |   |--- sepal width (cm) >  2.64
+|   |   |   |   |   |   |--- class: virginica
+|   |   |   |   |--- sepal length (cm) >  4.83
+|   |   |   |   |   |--- petal length (cm) <= 4.77
+|   |   |   |   |   |   |--- class: versicolor
+|   |   |   |   |   |--- petal length (cm) >  4.77
+|   |   |   |   |   |   |--- sepal length (cm) <= 5.24
+|   |   |   |   |   |   |   |--- class: virginica
+|   |   |   |   |   |   |--- sepal length (cm) >  5.24
+|   |   |   |   |   |   |   |--- petal length (cm) <= 4.81
+|   |   |   |   |   |   |   |   |--- sepal width (cm) <= 2.88
+|   |   |   |   |   |   |   |   |   |--- sepal width (cm) <= 2.48
+|   |   |   |   |   |   |   |   |   |   |--- class: versicolor
+|   |   |   |   |   |   |   |   |   |--- sepal width (cm) >  2.48
+|   |   |   |   |   |   |   |   |   |   |--- class: virginica
+|   |   |   |   |   |   |   |   |--- sepal width (cm) >  2.88
+|   |   |   |   |   |   |   |   |   |--- class: versicolor
+|   |   |   |   |   |   |   |--- petal length (cm) >  4.81
+|   |   |   |   |   |   |   |   |--- class: versicolor
+|   |   |   |--- petal length (cm) >  5.17
+|   |   |   |   |--- petal width (cm) <= 1.64
+|   |   |   |   |   |--- petal length (cm) <= 5.20
+|   |   |   |   |   |   |--- sepal length (cm) <= 6.22
+|   |   |   |   |   |   |   |--- class: versicolor
+|   |   |   |   |   |   |--- sepal length (cm) >  6.22
+|   |   |   |   |   |   |   |--- class: virginica
+|   |   |   |   |   |--- petal length (cm) >  5.20
+|   |   |   |   |   |   |--- class: versicolor
+|   |   |   |   |--- petal width (cm) >  1.64
+|   |   |   |   |   |--- class: virginica
+|   |   |--- petal length (cm) >  5.39
+|   |   |   |--- petal width (cm) <= 1.54
+|   |   |   |   |--- class: versicolor
+|   |   |   |--- petal width (cm) >  1.54
+|   |   |   |   |--- class: virginica
+|   |--- petal width (cm) >  1.66
+|   |   |--- petal length (cm) <= 4.55
+|   |   |   |--- sepal length (cm) <= 5.72
+|   |   |   |   |--- class: virginica
+|   |   |   |--- sepal length (cm) >  5.72
+|   |   |   |   |--- class: versicolor
+|   |   |--- petal length (cm) >  4.55
+|   |   |   |--- petal width (cm) <= 1.80
+|   |   |   |   |--- sepal width (cm) <= 3.07
+|   |   |   |   |   |--- sepal length (cm) <= 5.93
+|   |   |   |   |   |   |--- petal length (cm) <= 5.34
+|   |   |   |   |   |   |   |--- class: virginica
+|   |   |   |   |   |   |--- petal length (cm) >  5.34
+|   |   |   |   |   |   |   |--- class: versicolor
+|   |   |   |   |   |--- sepal length (cm) >  5.93
+|   |   |   |   |   |   |--- class: virginica
+|   |   |   |   |--- sepal width (cm) >  3.07
+|   |   |   |   |   |--- petal length (cm) <= 5.15
+|   |   |   |   |   |   |--- sepal length (cm) <= 6.68
+|   |   |   |   |   |   |   |--- petal length (cm) <= 5.11
+|   |   |   |   |   |   |   |   |--- sepal length (cm) <= 5.84
+|   |   |   |   |   |   |   |   |   |--- class: versicolor
+|   |   |   |   |   |   |   |   |--- sepal length (cm) >  5.84
+|   |   |   |   |   |   |   |   |   |--- class: virginica
+|   |   |   |   |   |   |   |--- petal length (cm) >  5.11
+|   |   |   |   |   |   |   |   |--- class: versicolor
+|   |   |   |   |   |   |--- sepal length (cm) >  6.68
+|   |   |   |   |   |   |   |--- class: versicolor
+|   |   |   |   |   |--- petal length (cm) >  5.15
+|   |   |   |   |   |   |--- class: virginica
+|   |   |   |--- petal width (cm) >  1.80
+|   |   |   |   |--- petal length (cm) <= 5.03
+|   |   |   |   |   |--- sepal width (cm) <= 3.22
+|   |   |   |   |   |   |--- petal length (cm) <= 5.02
+|   |   |   |   |   |   |   |--- class: virginica
+|   |   |   |   |   |   |--- petal length (cm) >  5.02
+|   |   |   |   |   |   |   |--- class: versicolor
+|   |   |   |   |   |--- sepal width (cm) >  3.22
+|   |   |   |   |   |   |--- petal width (cm) <= 1.98
+|   |   |   |   |   |   |   |--- class: versicolor
+|   |   |   |   |   |   |--- petal width (cm) >  1.98
+|   |   |   |   |   |   |   |--- class: virginica
+|   |   |   |   |--- petal length (cm) >  5.03
+|   |   |   |   |   |--- class: virginica

@@ -1,0 +1,162 @@
+{
+  "DecisionTree": {
+    "accuracy": 0.9733333333333334,
+    "accuracy_percent": 97.33333333333334,
+    "confusion_matrix": [
+      [
+        150,
+        0,
+        0
+      ],
+      [
+        0,
+        146,
+        4
+      ],
+      [
+        0,
+        8,
+        142
+      ]
+    ],
+    "labels": [
+      "setosa",
+      "versicolor",
+      "virginica"
+    ]
+  },
+  "kNN_3": {
+    "accuracy": 0.98,
+    "accuracy_percent": 98.0,
+    "confusion_matrix": [
+      [
+        150,
+        0,
+        0
+      ],
+      [
+        0,
+        146,
+        4
+      ],
+      [
+        0,
+        5,
+        145
+      ]
+    ],
+    "labels": [
+      "setosa",
+      "versicolor",
+      "virginica"
+    ]
+  },
+  "kNN_5": {
+    "accuracy": 0.9755555555555555,
+    "accuracy_percent": 97.55555555555556,
+    "confusion_matrix": [
+      [
+        150,
+        0,
+        0
+      ],
+      [
+        0,
+        145,
+        5
+      ],
+      [
+        0,
+        6,
+        144
+      ]
+    ],
+    "labels": [
+      "setosa",
+      "versicolor",
+      "virginica"
+    ]
+  },
+  "kNN_11": {
+    "accuracy": 0.9755555555555555,
+    "accuracy_percent": 97.55555555555556,
+    "confusion_matrix": [
+      [
+        150,
+        0,
+        0
+      ],
+      [
+        0,
+        147,
+        3
+      ],
+      [
+        0,
+        8,
+        142
+      ]
+    ],
+    "labels": [
+      "setosa",
+      "versicolor",
+      "virginica"
+    ]
+  },
+  "NaiveBayes": {
+    "accuracy": 0.9644444444444444,
+    "accuracy_percent": 96.44444444444444,
+    "confusion_matrix": [
+      [
+        150,
+        0,
+        0
+      ],
+      [
+        0,
+        143,
+        7
+      ],
+      [
+        0,
+        9,
+        141
+      ]
+    ],
+    "labels": [
+      "setosa",
+      "versicolor",
+      "virginica"
+    ]
+  },
+  "MLP": {
+    "accuracy": 0.9644444444444444,
+    "accuracy_percent": 96.44444444444444,
+    "confusion_matrix": [
+      [
+        150,
+        0,
+        0
+      ],
+      [
+        0,
+        143,
+        7
+      ],
+      [
+        0,
+        9,
+        141
+      ]
+    ],
+    "labels": [
+      "setosa",
+      "versicolor",
+      "virginica"
+    ]
+  },
+  "best_classifier": {
+    "classifier": "kNN_3",
+    "accuracy": 0.98
+  }
+}

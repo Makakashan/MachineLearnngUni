@@ -1,0 +1,100 @@
+{
+  "DecisionTree": {
+    "accuracy": 0.8646080760095012,
+    "precision": 0.8394160583941606,
+    "recall": 0.7666666666666667,
+    "confusion_matrix": [
+      [
+        249,
+        22
+      ],
+      [
+        35,
+        115
+      ]
+    ]
+  },
+  "kNN_3": {
+    "accuracy": 0.8954869358669834,
+    "precision": 0.8680555555555556,
+    "recall": 0.8333333333333334,
+    "confusion_matrix": [
+      [
+        252,
+        19
+      ],
+      [
+        25,
+        125
+      ]
+    ]
+  },
+  "kNN_5": {
+    "accuracy": 0.8907363420427553,
+    "precision": 0.8768115942028986,
+    "recall": 0.8066666666666666,
+    "confusion_matrix": [
+      [
+        254,
+        17
+      ],
+      [
+        29,
+        121
+      ]
+    ]
+  },
+  "kNN_11": {
+    "accuracy": 0.9073634204275535,
+    "precision": 0.8992805755395683,
+    "recall": 0.8333333333333334,
+    "confusion_matrix": [
+      [
+        257,
+        14
+      ],
+      [
+        25,
+        125
+      ]
+    ]
+  },
+  "NaiveBayes": {
+    "accuracy": 0.838479809976247,
+    "precision": 0.777027027027027,
+    "recall": 0.7666666666666667,
+    "confusion_matrix": [
+      [
+        238,
+        33
+      ],
+      [
+        35,
+        115
+      ]
+    ]
+  },
+  "MLP": {
+    "accuracy": 0.8883610451306413,
+    "precision": 0.8503401360544217,
+    "recall": 0.8333333333333334,
+    "confusion_matrix": [
+      [
+        249,
+        22
+      ],
+      [
+        25,
+        125
+      ]
+    ]
+  },
+  "answers": {
+    "accuracy_definition": "Accuracy to odsetek wszystkich poprawnych klasyfikacji.",
+    "precision_definition": "Precision to odsetek poprawnych diagnoz pozytywnych wsrod wszystkich przewidzianych jako pozytywne.",
+    "recall_definition": "Recall (sensitivity) to odsetek wykrytych osob chorych wsrod wszystkich faktycznie chorych.",
+    "important_for_avoiding_false_positive": "Precision",
+    "important_for_avoiding_false_negative": "Recall",
+    "is_accuracy_safe_for_imbalanced_data": "Nie. Przy niezbalansowanym zbiorze accuracy moze byc mylace."
+  }
+}

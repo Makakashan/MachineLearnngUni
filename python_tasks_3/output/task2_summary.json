@@ -1,0 +1,29 @@
+{
+  "train_size": 1050,
+  "test_size": 450,
+  "accuracy": 0.9733333333333334,
+  "accuracy_percent": 97.33333333333334,
+  "confusion_matrix": [
+    [
+      150,
+      0,
+      0
+    ],
+    [
+      0,
+      146,
+      4
+    ],
+    [
+      0,
+      8,
+      142
+    ]
+  ],
+  "labels": [
+    "setosa",
+    "versicolor",
+    "virginica"
+  ],
+  "tree_text_file": "/home/makakashan/Documents/My Favourite Ug/AI2026/python_tasks_3/output/task2_tree.txt"
+}
